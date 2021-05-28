@@ -7,12 +7,10 @@
 
 /*
 Colors used
-
-Text Color (Navy): #141850;
-Torea Bay (Blue): #303179;
-HTML Gray: #808080;
-Primary Color (Coral): #ed7966;
-Secondary Color (Pale Pink): #fae5df;
+--primary-color(eerie-black): #1c1c1cff;
+--secondary-color(ghost-white): #fafaffff;
+--davys-grey: #494949ff;
+--sonic-silver: #7c7a7aff;
  */
 
  * {
@@ -22,18 +20,17 @@ Secondary Color (Pale Pink): #fae5df;
 
 
  a {
-   color: #141850;
+   color: #1c1c1cff;
+   text-decoration: none;
  }
 
  a:active {
    /* selected link */
-   color: #141850;
+   color: #1c1c1cff;
  }
 
  a:hover {
-   /* No underlining when hovering over a link */
-   text-decoration: none;
-   color: #808080;
+   color: undefined;
    -webkit-transition: 0.9s opacity;
    -o-transition: 0.9s opacity;
    transition: 0.9s opacity;
@@ -42,9 +39,7 @@ Secondary Color (Pale Pink): #fae5df;
  }
 
  a:focus {
-   /* No underlining when hovering over a link */
-   text-decoration: none;
-   color: #808080;
+   color: undefined;
    -webkit-transition: 0.9s opacity;
    -o-transition: 0.9s opacity;
    transition: 0.9s opacity;
@@ -54,20 +49,19 @@ Secondary Color (Pale Pink): #fae5df;
 
  a:visited {
    /* visited link */
- color: #303179;
+ color: #1c1c1cff;
  }
 
 body {
-  background-color: #fae5df;
-  color: #141850;
+  color: #1c1c1cff;
   font-family: 'Bitter', serif;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-  font-size: 16px;
   /*sets the font size to 16px */
-  line-height: 1.6;
+  font-size: 16px;
   /*sets the line-height to 1.6 */
-  padding: 10px;
+  line-height: 1.6;
+  margin: 0;
 }
 
 button {
@@ -77,7 +71,7 @@ button {
   /* takes the font from the outer container */
   font-family: inherit;
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: #141850;
+  background-color: #1c1c1cff;
   color: white;
   text-decoration: none;
   /*adds spacing to the button (this will be discussed more in-depth later) */
@@ -97,7 +91,7 @@ button {
   /* takes the font from the outer container */
   font-family: inherit;
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: #141850;
+  background-color: #1c1c1cff;
   color: white;
   text-decoration: none;
   /*adds spacing to the button (this will be discussed more in-depth later) */
@@ -117,7 +111,7 @@ button {
   /* takes the font from the outer container */
   font-family: inherit;
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: #141850;
+  background-color: #1c1c1cff;
   color: white;
   text-decoration: none;
   /*adds spacing to the button (this will be discussed more in-depth later) */
@@ -141,8 +135,8 @@ button:focus,
 }
 
 .button__secondary {
-  background-color: #ed7966;
-  color: #141850;
+  background-color: #494949ff;
+  color: #fafaffff;
 }
 
 .cloud-back {
@@ -159,10 +153,18 @@ form {
    padding: 20px 70px;
 }
 
+#grad {
+  background-image: -webkit-gradient(linear,right top, left top,from(#fafaffff),to(#7c7a7aff));
+  background-image: -o-linear-gradient(right,#fafaffff,#7c7a7aff);
+  background-image: linear-gradient(to left,#fafaffff,#7c7a7aff);
+  background-size: cover;
+}
+
 h1 {
   font-size: 30px;
   font-weight: 700;
   text-align: center;
+  color: #494949ff;
 }
 
 h2 {
@@ -183,14 +185,31 @@ input [type=tel] {
   width: 50%;
 }
 
-table.center {
-  margin-left:auto;
-  margin-right:auto;
+.styled-table {
+  background-color: #fafaffff;
+  border-collapse: collapse;
+  font-family: 'Work Sans', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 400px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-th, td {
-  border-bottom: 1px solid #ddd;
-  text-align: center;
+.styled-table thead tr {
+    background-color: #494949ff;
+    color: #fafaffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.standard-label {
+  line-height: 2.5;
 }
 
 /* start grid fallback */
@@ -212,7 +231,7 @@ th, td {
  }
 
  .grid__item {
-   background-color: #ed7966;
+   background-color: #fafaffff;
    width: auto;
    min-height: auto;
    margin: 0;
@@ -274,6 +293,7 @@ th, td {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  font-weight: bold;
 }
 
 .profile__portrait {
