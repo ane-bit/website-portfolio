@@ -157,7 +157,7 @@ form {
   background-image: -webkit-gradient(linear,right top, left top,from(#fafaffff),to(#7c7a7aff));
   background-image: -o-linear-gradient(right,#fafaffff,#7c7a7aff);
   background-image: linear-gradient(to left,#fafaffff,#7c7a7aff);
-  background-size: cover;
+  height: 100vh;
 }
 
 h1 {
