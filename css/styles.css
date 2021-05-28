@@ -1,19 +1,16 @@
 /*
 Colors used
-
-Text Color (Navy): #141850;
-Torea Bay (Blue): #303179;
-HTML Gray: #808080;
-Primary Color (Coral): #ed7966;
-Secondary Color (Pale Pink): #fae5df;
+--primary-color(eerie-black): #1c1c1cff;
+--secondary-color(ghost-white): #fafaffff;
+--davys-grey: #494949ff;
+--sonic-silver: #7c7a7aff;
  */
 
 :root {
-  --primary-color: #141850;
-  --secondary-color: #303179;
-  --html-gray: #808080;
-  --coral: #ed7966;
-  --pale-pink: #fae5df;
+  --primary-color: #1c1c1cff;
+  --secondary-color: #fafaffff;
+  --davys-grey: #494949ff;
+  --sonic-silver: #7c7a7aff;
   --font-weight: 700;
   --text-decoration: none;
 }
@@ -25,6 +22,7 @@ Secondary Color (Pale Pink): #fae5df;
 
  a {
    color: var(--primary-color);
+   text-decoration: var(--text-decoration);
  }
 
  a:active {
@@ -33,9 +31,7 @@ Secondary Color (Pale Pink): #fae5df;
  }
 
  a:hover, a:focus {
-   /* No underlining when hovering over a link */
-   text-decoration: var(--text-decoration);
-   color: var(--html-gray);
+   color: var(--davys-gray);
    transition: 0.9s opacity;
    /* reduces the opacity of the button to 80% */
    opacity: 0.8;
@@ -43,20 +39,19 @@ Secondary Color (Pale Pink): #fae5df;
 
  a:visited {
    /* visited link */
- color: var(--secondary-color);
+ color: var(--primary-color);
  }
 
 body {
-  background-color: var(--pale-pink);
   color: var(--primary-color);
   font-family: 'Bitter', serif;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-  font-size: 16px;
   /*sets the font size to 16px */
-  line-height: 1.6;
+  font-size: 16px;
   /*sets the line-height to 1.6 */
-  padding: 10px;
+  line-height: 1.6;
+  margin: 0;
 }
 
 button,
@@ -89,8 +84,8 @@ button:focus,
 }
 
 .button__secondary {
-  background-color: var(--coral);
-  color: var(--primary-color);
+  background-color: var(--davys-grey);
+  color: var(--secondary-color);
 }
 
 .cloud-back {
@@ -105,10 +100,16 @@ form {
    padding: 20px 70px;
 }
 
+#grad {
+  background-image: linear-gradient(to left,#fafaffff,#7c7a7aff);
+  background-size: cover;
+}
+
 h1 {
   font-size: 30px;
   font-weight: var(--font-weight);
   text-align: center;
+  color: var(--davys-grey);
 }
 
 h2 {
@@ -129,14 +130,30 @@ input [type=tel] {
   width: 50%;
 }
 
-table.center {
-  margin-left:auto;
-  margin-right:auto;
+.styled-table {
+  background-color: var(--secondary-color);
+  border-collapse: collapse;
+  font-family: 'Work Sans', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-th, td {
-  border-bottom: 1px solid #ddd;
-  text-align: center;
+.styled-table thead tr {
+    background-color: var(--davys-grey);
+    color: var(--secondary-color);
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.standard-label {
+  line-height: 2.5;
 }
 
 /* start grid fallback */
@@ -156,7 +173,7 @@ th, td {
  }
 
  .grid__item {
-   background-color: var(--coral);
+   background-color: var(--secondary-color);
    width: auto;
    min-height: auto;
    margin: 0;
@@ -204,6 +221,7 @@ th, td {
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-weight: bold;
 }
 
 .profile__portrait {
