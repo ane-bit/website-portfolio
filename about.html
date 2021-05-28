@@ -10,13 +10,14 @@
   <!--viewport tag-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--this is the title of the page-->
-  <title>About Me Page</title>
+  <title>About Me</title>
   <!-- TODO: insert favicon link here-->
   <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
   <link rel="icon" href="./img/favicon-32x32.png">
 </head>
 
 <body>
+  <div id="grad">
   <header class="page-header">
     <!-- TODO: add your logo here-->
     <img src="img/portfoliologo.svg" alt="logo" class="page-header__item">
@@ -40,20 +41,44 @@
   </header>
 
   <main class="profile">
-    <h1>About Me</h1>
-    <p>
-      Welcome to my "About" page!
-    </P>
+    <h1>About Me</h1><br>
     <p>
       <!-- TODO: update about information-->
       I am multipassionate and come from a diverse background.
-      After studying Art History and working as a Project Manager, I decided to make a change and become a full-time Pilates instructor.
+      After studying Art History I worked as a Project Manager at a centre for Text Technology. I decided to make a change after 6 years and became a full-time Pilates instructor.
       During this time I also started doing and eventually coaching CrossFit.
     </p>
     <p>
-      I've worked in South Africa, Saudi Arabia and Bermuda and currently resides in Germany.
+      I've worked and lived in South Africa, Saudi Arabia and Bermuda and currently reside in Germany.
       It's here that I decided it's time for another change in direction and now I'm entering the exciting world of Web Development!
     </p><br>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Skills</th>
+          <th>Years of Experience</th>
+          <th>Level of Expertise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTML</td>
+          <td>1</td>
+          <td>Beginner</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>1</td>
+          <td>Beginner</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>0</td>
+          <td>Pre-Beginner</td>
+        </tr>
+      </tbody>
+    </table><br>
 
     <a href="files/cv.pdf" class="button" download>Download my CV</a><br>
 
@@ -990,34 +1015,7 @@
           />
       </g>
   </svg>
-
-    <table class="center">
-      <thead>
-        <tr>
-          <th>Skills</th>
-          <th>Years of Experience</th>
-          <th>Level of Expertise</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>HTML</td>
-          <td>1</td>
-          <td>Beginner</td>
-        </tr>
-        <tr>
-          <td>CSS</td>
-          <td>1</td>
-          <td>Beginner</td>
-        </tr>
-        <tr>
-          <td>JavaScript</td>
-          <td>0</td>
-          <td>Pre-Beginner</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
+</main>
 
   <footer class="page-footer">
     <p>Find me on</p>
@@ -1037,6 +1035,7 @@
   </footer>
 
   <script src="js/tota11y.min.js"></script>
+</div>
 </body>
 
 </html>
