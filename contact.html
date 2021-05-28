@@ -10,13 +10,14 @@
   <!--viewport tag-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--this is the title of the page-->
-  <title>Contact Ane Bekker</title>
+  <title>Contact Me</title>
   <!-- TODO: insert favicon link here-->
   <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
   <link rel="icon" href="./img/favicon-32x32.png">
 </head>
 
 <body>
+  <div id="grad">
   <header class="page-header">
     <!-- TODO: add your logo here-->
     <img src="img/portfoliologo.svg" alt="logo" class="page-header__item">
@@ -41,7 +42,7 @@
 
   <main class="profile">
     <div>
-      <h1>Get in Touch!</h1>
+      <h1 class="heading">Get in Touch!</h1>
       <!--insert address here-->
       Ane Bekker<br>
       Westend Str. 8<br>
@@ -63,15 +64,16 @@
   <!--contact form-->
   <form class="profile" action="" method="post" id="contact-form">
     <h2>Message Me!</h2>
-    <label class="standard-label" for="contact-email">E-mail:
+    <label class="standard-label" for="contact-email">E-mail*
     </label><br>
-    <input type="email" id="contact-email" required><br>
+    <input type="email" id="contact-email" autofocus required><br>
 
-    <label class="standard-label" for="contact-telephone">Telephone: </label><br>
+    <label class="standard-label" for="contact-telephone">Telephone </label><br>
     <input type="tel" id="contact-telephone" pattern="\d{3}[\-]\d{3}[\-]\d{4}"><br>
 
-    <label class="standard-label" for="message">Message: </label><br>
+    <label class="standard-label" for="message">Message* </label><br>
     <textarea maxlength="240" id="message" required></textarea><br>
+    <p>*Required fields</P>
 
     <button class="button__secondary" type="submit" id="message" value="Send message">Send</button><br>
   </form>
@@ -94,6 +96,7 @@
   </footer>
 
   <script src="js/tota11y.min.js"></script>
+</div>
 </body>
 
 </html>
