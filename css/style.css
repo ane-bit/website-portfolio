@@ -4,37 +4,42 @@ Colors used
 --color-2(ghost-white): #fafaffff;
 --color-3(davys-grey): #494949ff;
 --accent-color (cyan): #84ffff;
+--extra-color(limited-spruce); #374147;
+--extra-color (manatee): #9197a1;
+--accent-color2(sunset-orange): #fc4754;
 --linear-gradient-color(sonic-silver): #7c7a7aff;
  */
 
 :root {
-  --color-1: #1c1c1cff;
+  --color-1: #071425;
   --color-2: #fafaffff;
-  --color-3: #494949ff;
-  --accent-color: #84ffff;
-  --sonic-silver: #7c7a7aff;
+  --color-3: #9197a1;
+  --accent-color: #fc4754;
+  --sonic-silver: #9197a1;
   --font-weight: 700;
   --text-decoration: none;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 a {
-  color: var(--color-1);
+  color: var(--color-2);
   text-decoration: var(--text-decoration);
 }
 
 a:active,
 a:visited {
   /* selected link */
-  color: var(--color-1);
+  color: var(--color-2);
 }
 
 a:hover,
 a:focus {
-  color: var(--color-3);
+  color: var(--color-2);
   transition: 0.9s opacity;
 
   /* reduces the opacity of the button to 80% */
@@ -42,12 +47,14 @@ a:focus {
 }
 
 body {
-  background-image: linear-gradient(to left, #fafaffff, #7c7a7aff);
-  color: var(--color-1);
+  /*background-image: linear-gradient(to left, #fafaffff, #7c7a7aff);*/
+  background-color: var(--color-1);
+  color: var(--color-2);
 
   /* sets the font-family */
-  font-family: 'Bitter', serif;
-  font-family: 'Work Sans', sans-serif;
+  /*font-family: 'Bitter', serif;
+  font-family: 'Work Sans', sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 
   /* sets the font size to 16px */
@@ -67,10 +74,11 @@ button {
 
   /* takes the font from the outer container */
   font-family: inherit;
+  font-weight: bold;
 
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: var(--color-1);
-  color: var(--color-2);
+  background-color: var(--accent-color);
+  color: var(--color-1);
   text-decoration: var(--text-decoration);
 
   /* adds spacing to the button (this will be discussed more in-depth later) */
@@ -101,20 +109,12 @@ button:focus,
 }
 
 .button__secondary:hover {
-  color: var(--color-1);
+  color: var(--color-2);
   font-weight: bold;
 }
 
 .contact-message {
   height: 150px;
-}
-
-.cloud-back {
-  animation: 34s cloud-move-reverse infinite alternate linear;
-}
-
-.cloud-front {
-  animation: 30s cloud-move infinite alternate linear;
 }
 
 /* fixed footer */
@@ -126,16 +126,10 @@ form {
   padding: 20px 70px;
 }
 
-#grad {
-  background-image: linear-gradient(to left, #fafaffff, #7c7a7aff);
-  height: 100vh;
-}
-
 h1 {
   font-size: 30px;
   font-weight: var(--font-weight);
   text-align: center;
-  color: var(--color-1);
 }
 
 h2 {
@@ -158,6 +152,7 @@ input [type=tel] {
 
 .styled-table {
   background-color: var(--color-2);
+  color: var(--color-1);
   border-collapse: collapse;
   font-family: 'Work Sans', sans-serif;
   margin-left: auto;
@@ -167,8 +162,8 @@ input [type=tel] {
 }
 
 .styled-table thead tr {
-  background-color: var(--color-3);
-  color: var(--color-2);
+  background-color: var(--sonic-silver);
+  color: var(--color-1);
   text-align: left;
 }
 
@@ -203,15 +198,11 @@ input [type=tel] {
 
   .grid__item {
     background-color: var(--color-2);
+    color: var(--color-1);
     width: auto;
     min-height: auto;
     margin: 0;
     padding: 10px;
-  }
-
-  .grid__item:last-child {
-    grid-column: 3 / 3;
-    grid-row: 1 / 3;
   }
 }
 
@@ -229,7 +220,6 @@ input [type=tel] {
 }
 
 .navigation-list__item:hover {
-  color: var(--color-1);
   transition: 0.9s;
 }
 
@@ -260,6 +250,7 @@ input [type=tel] {
 }
 
 .page-header {
+  background-color: var(--color-1);
   display: flex;
   width: 100%;
   padding: 20px;
@@ -276,6 +267,7 @@ input [type=tel] {
 
 .page-footer {
   clear: both;
+  background-color: var(--color-1);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -288,10 +280,7 @@ input [type=tel] {
   width: 250px;
   margin-right: 40px;
   border-radius: 50%;
-}
-
-.sun {
-  animation: 4s color-change infinite alternate linear;
+  border: 3px solid var(--color-2);
 }
 
 @media all and (max-width: 500px) {
@@ -311,46 +300,40 @@ input [type=tel] {
     grid-gap: 10px;
   }
 
-  .grid__item:last-child {
-    grid-column: auto / auto;
-    grid-row: auto / auto;
-  }
-
-  h1 {
+h1 {
     font-size: 22px;
   }
 }
 
-@keyframes color-change {
-  0% {
-    fill: #edc655;
-  }
-
-  50% {
-    fill: #fcffad;
-  }
-
-  100% {
-    fill: #f76414;
-  }
+.grid-button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-1);
+  font-weight: bold;
+  background-color: var(--accent-color);
+  padding: 0.5em 1.25em;
+  border-radius: 0.25em;
+}
+.card-button:hover,
+.card-button:focus {
+  background-color: var(--color-2);
+  color: var(--color-1);
+  font-weight: bold;
 }
 
-@keyframes cloud-move {
-  from {
-    transform: translate(0, 50px);
-  }
-
-  to {
-    transform: translate(200px, 50px);
-  }
-}
-
-@keyframes cloud-move-reverse {
-  from {
-    transform: translate(446px, 48px);
-  }
-
-  to {
-    transform: translate(100px, 48px);
+@media (prefers-reduced-motion: reduce)
+{
+  *,
+  *::before,
+  *::after {
+  animation-duration: 0.01ms
+  !important;
+  animation-iteration-count: 1
+  !important;
+  transition-duration: 0.01ms
+  !important;
+  scroll-behaviour: auto !important;
+  transition-delay: 0ms !important;
   }
 }
