@@ -296,6 +296,18 @@ input [type=tel] {
     min-height: auto;
     margin: 0;
     padding: 10px;
+    -webkit-transition: -webkit-transform 500ms ease;
+    transition: -webkit-transform 500ms ease;
+    -o-transition: transform 500ms ease;
+    transition: transform 500ms ease;
+    transition: transform 500ms ease, -webkit-transform 500ms ease;
+    border-radius: 0.5rem;
+  }
+  .grid__item:hover,
+  grid__item:focus-within {
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
   }
 }
 
@@ -416,7 +428,7 @@ input [type=tel] {
     grid-gap: 10px;
   }
 
-h1 {
+  h1 {
     font-size: 22px;
   }
 }
@@ -431,39 +443,33 @@ h1 {
   padding: 0.5em 1.25em;
   border-radius: 0.25em;
 }
+
 .card-button:hover {
   background-color: #fafaffff;
   color: #071425;
   font-weight: bold;
 }
+
 .card-button:focus {
   background-color: #fafaffff;
   color: #071425;
   font-weight: bold;
 }
 
-@media (prefers-reduced-motion: reduce)
-{
+@media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-  -webkit-animation-duration: 0.01ms
-  !important;
-          animation-duration: 0.01ms
-  !important;
-  -webkit-animation-iteration-count: 1
-  !important;
-          animation-iteration-count: 1
-  !important;
-  -webkit-transition-duration: 0.01ms
-  !important;
-       -o-transition-duration: 0.01ms
-  !important;
-          transition-duration: 0.01ms
-  !important;
-  scroll-behaviour: auto !important;
-  -webkit-transition-delay: 0ms !important;
-       -o-transition-delay: 0ms !important;
-          transition-delay: 0ms !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+         -o-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behaviour: auto !important;
+    -webkit-transition-delay: 0ms !important;
+         -o-transition-delay: 0ms !important;
+            transition-delay: 0ms !important;
   }
 }
