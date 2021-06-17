@@ -322,11 +322,17 @@ input [type=tel] {
   border-radius: 0.25em;
 }
 
-.card-button:hover,
-.card-button:focus {
-  background-color: var(--color-2);
+.grid-button:hover,
+.grid-button:focus {
   color: var(--color-1);
   font-weight: bold;
+}
+
+.word-accent {
+  background-color: var(--accent-color);
+  color: var(--color-1);
+  font-weight: bold;
+  padding: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
